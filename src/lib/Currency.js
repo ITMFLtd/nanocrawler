@@ -4,12 +4,12 @@ import config from "../client-config.json";
 export default {
   fromRaw: raw => {
     const value = BigNumber(raw.toString());
-    return value.shiftedBy((config.currency.precision || 30) * -1).toNumber();
+    return value.toNumber();
   },
 
   toRaw: mvalue => {
     const value = BigNumber(mvalue.toString());
-    return value.shiftedBy(config.currency.precision || 30).toString(10);
+    return value.toString(10);
   },
 
   addRaw: (...values) => {
