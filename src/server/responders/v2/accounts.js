@@ -175,7 +175,7 @@ export default function(app, nano) {
           const resp = await nano.rpc("accounts_pending", {
             accounts: [req.params.account],
             source: true,
-            threshold: Currency.toRaw(0.000001)
+            threshold: 20000000000
           });
 
           if (resp.error) throw new BadRequest(resp.error);

@@ -146,7 +146,7 @@ export default function(app, nano) {
           const resp = await nano.rpc("accounts_pending", {
             accounts: [req.params.account],
             source: true,
-            threshold: Currency.toRaw(0.000001)
+            threshold: 20000000000
           });
 
           const blocks = _.toPairs(resp.blocks[req.params.account])
